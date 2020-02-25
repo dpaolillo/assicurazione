@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>Create new Claim</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<script type="application/javascript" src="/js/functions.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="text-center">
+		
+    <div class="container">
+	
+	<form method="POST" class="form-signin" action="/company/api/v1/create-claims">
+				<h1 class="h3 mb-3 font-weight-normal">Crea nuovo sinistro</h1>
+				
+				
+				<label for="inputCodice" class="sr-only">Codice</label> 
+				<input
+					type="number" id="code" name="code"  class="form-control"
+					placeholder="code" required autofocus> 
+					
+			    <label for="inputNome" class="sr-only">Nome Sinistro</label> 
+				<input
+					type="text" id="name" name="name" class="form-control"
+					placeholder="Name" required autofocus> 
+				
+				<label for="inputEmployee" class="sr-only">Employee</label> 
+				
+				<select class="form-control" id="IdEmployee" name="IdEmployee">
+    				<option value="0">select Employee</option>
+    				<option th:each="employee : ${employeesList}" th:value="${employee.id}" th:text="${employee.name}"><span th:text="${employee.name}"></option>
+   				 </select>
+				
+				<button id="btn-one" class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+			</form>	
+	</div>
+</body>
+</html>

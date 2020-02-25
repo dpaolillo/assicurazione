@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<!--  Css Personalizzato -->
+<link rel="stylesheet" href="css/index.css">
+
+<!-- Favicons -->
+<meta name="theme-color" content="#563d7c">
+
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+
+</head>
+
+<body class="text-center">
+	<div class="container">
+			<form method="POST" class="form-signin" action="/company/api/v1//employees">
+				<h1 class="h3 mb-3 font-weight-normal">Crea un nuovo impiegato</h1>
+				
+				
+				<label for="inputName" class="sr-only">Nome</label> 
+				<input
+					type="text" id="name" name="name"  class="form-control"
+					placeholder="Nome" required autofocus> 
+					
+			    <label for="inputSurname" class="sr-only">Cognome</label> 
+				<input
+					type="text" id="surname" name="surname" class="form-control"
+					placeholder="Cognome" required autofocus> 
+				
+				<label for="inputEmail" class="sr-only">Email address</label> 
+				<input
+					type="email" id="email" name="email" class="form-control"
+					placeholder="Email" required autofocus> 
+					
+				
+				<button id="btn-one" class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+			</form>
+				<a href="/company/api/v1/employees"">
+					<button id="btn-one" class="btn btn-lg btn-primary btn-block">Show all employees</button>
+				</a>
+							
+				<a href="/company/api/v1/create-claims">
+					<button id="btn-one" class="btn btn-lg btn-primary btn-block">Create claim</button>
+				</a>
+				
+				<a href="/company/api/v1/claims">
+					<button id="btn-one" class="btn btn-lg btn-primary btn-block">Show all claims</button>
+				</a>
+				
+				<p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+			
+		</div>
+		
+		
+		
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/functions.js"></script>
+	
+</body>
+</html>

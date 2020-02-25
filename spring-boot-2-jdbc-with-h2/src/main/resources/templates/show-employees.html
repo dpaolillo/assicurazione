@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<title>New employee</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<script type="application/javascript" src="/js/functions.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="text-center">
+	<div class="container">
+		<h1>Employees</h1>
+		<table>
+			<tr th:each="employee : ${employeesList}">
+				<td th:text="${employee.name}"></td>
+				<td th:text="${employee.surname}"></td>
+				<td th:text="${employee.id}"></td>
+				<td><input type="button" value="Delete" th:onclick="'deleteEmployee(\'' + ${employee.id} + '\');'" /></td>
+				<td><input type="button" value="Details" th:onclick="'detailsEmployee(\'' + ${employee.id} + '\');'" /></td>
+				<td><input type="button" value="All claims" th:onclick="'claimsEmployee(\'' + ${employee.id} + '\');'" /></td>
+			</tr>
+		</table>
+
+		<div layout="column">
+				<div layout="row">
+				<span>Do you want add new employe?</span>
+				</div>
+				<div layout="row">
+				<a href="/index.html">
+					<button id="btn-one" class="btn btn-sm btn-primary">New Employee</button>
+				</a>
+				</div>
+		</div>
+		 
+	</div>
+</body>
+</html>
